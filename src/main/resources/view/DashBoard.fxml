@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="605.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.DashBoardController">
+   <children>
+      <AnchorPane fx:id="ancBody" layoutX="200.0" layoutY="55.0" minHeight="500.0" minWidth="510.0" prefHeight="552.0" prefWidth="521.0" style="-fx-background-color: #ADD899;" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <AnchorPane fx:id="content" style="-fx-background-color: #000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <VBox alignment="TOP_CENTER" layoutY="54.0" prefHeight="522.0" prefWidth="200.0" spacing="50.0" style="visibility: #7367F0;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="54.0">
+         <children>
+            <Pane prefHeight="554.0" prefWidth="200.0" style="-fx-background-color: #e2e2b2;">
+               <children>
+                  <Button layoutX="52.0" layoutY="11.0" mnemonicParsing="false" onAction="#LaborOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Labors" />
+                  <Button layoutX="52.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Retirement" />
+                  <Button layoutX="52.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Manager" />
+                  <Button layoutX="52.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Payment" />
+                  <Button layoutX="52.0" layoutY="376.0" mnemonicParsing="false" onAction="#AccidentOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Accident" />
+                  <Button layoutX="52.0" layoutY="141.0" mnemonicParsing="false" onAction="#ShiftOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Shift" />
+                  <Button layoutX="52.0" layoutY="175.0" mnemonicParsing="false" onAction="#LeaveOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Leave" />
+                  <Button layoutX="52.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Euipment" />
+                  <Button layoutX="52.0" layoutY="245.0" mnemonicParsing="false" onAction="#TrainingOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Training" />
+                  <Button layoutX="52.0" layoutY="43.0" mnemonicParsing="false" onAction="#SupervisorOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Supervisor" />
+                  <Button layoutX="52.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Manager" />
+                  <Button layoutX="52.0" layoutY="105.0" mnemonicParsing="false" onAction="#AttendanceOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Attendance" />
+                  <Button layoutX="52.0" layoutY="415.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Insurance" />
+                  <Button layoutX="52.0" layoutY="451.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Union Member" />
+                  <Button layoutX="51.0" layoutY="485.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="Feedback" />
+                  <Button layoutX="51.0" layoutY="519.0" mnemonicParsing="false" onAction="#FactoryOfficerOnAction" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #08C2FF;" text="FactoryOfficer" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="56.0" prefWidth="720.0" style="-fx-background-color: #FFE700;" text="Labor Management Syastem" textFill="#1c241d">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
