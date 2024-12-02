@@ -1,0 +1,136 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="PaymentReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="307b26b3-0ce9-4f99-a638-ccaa3b8dc583">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (9)"/>
+	<query language="SQL"><![CDATA[select * from Payment]]></query>
+	<field name="PaymentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PaymentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="PaymentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="OfficerID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="Day_Besic_Salary" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Day_Besic_Salary"/>
+		<property name="com.jaspersoft.studio.field.label" value="Day_Besic_Salary"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="Monthly_Total_Salalry" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Monthly_Total_Salalry"/>
+		<property name="com.jaspersoft.studio.field.label" value="Monthly_Total_Salalry"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="2432c2a5-bddb-415a-a286-78f01ce6feac" x="160" y="30" width="208" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Payment Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="48d33d3b-e996-423e-b9ce-46fc227e81e4" x="0" y="0" width="95" height="30" hTextAlign="Center">
+			<text><![CDATA[PaymentID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8c50068e-7c5e-4d38-8772-fbdf29d0bf48"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="1c3cb96a-59e2-4dcd-82d5-f000992586b4" x="95" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99ddd74c-a551-4a4b-b8c1-fb2142c27232"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="05ebd073-2730-4051-b964-a83ab6b3d26d" x="187" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ef9cec9-4155-4613-b2af-26b735b49e8e"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="6758b854-4875-4f06-ad56-aa9b02389680" x="279" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[OfficerID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3fd4d338-a33a-4b89-ab53-801c120cd5af"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="65ca522f-39b1-44c5-861c-e967992ccb68" x="371" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[Day_Besic_Salary]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e1f14c3-f106-4e73-85f8-918f8a75c3b5"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="6be64831-f98c-4a3c-9652-de405afaa6af" x="463" y="0" width="106" height="30" hTextAlign="Center">
+			<text><![CDATA[Monthly_Total_Salalry]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cfbdd75-8299-4ca3-ab87-ad292f2d0b8f"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<element kind="textField" uuid="4a9cda2a-d51a-4dde-8d2b-41f8340ebee3" x="0" y="0" width="95" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{PaymentID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8c50068e-7c5e-4d38-8772-fbdf29d0bf48"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="0528b543-4dc0-4a90-8546-99a895a80c21" x="95" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99ddd74c-a551-4a4b-b8c1-fb2142c27232"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="390f778f-a56c-4c1f-9445-b3c320ec3a24" x="187" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ef9cec9-4155-4613-b2af-26b735b49e8e"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="0d6461e9-68b8-4cf6-bba1-37a3809ddd88" x="279" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{OfficerID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3fd4d338-a33a-4b89-ab53-801c120cd5af"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="546e1b2d-7648-4a5b-92e4-f1b215ced732" x="371" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Day_Besic_Salary}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e1f14c3-f106-4e73-85f8-918f8a75c3b5"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="44a53b30-d9ae-4c49-b274-eb2c436fd142" x="463" y="0" width="106" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Monthly_Total_Salalry}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cfbdd75-8299-4ca3-ab87-ad292f2d0b8f"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
