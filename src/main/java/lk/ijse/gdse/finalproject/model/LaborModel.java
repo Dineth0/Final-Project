@@ -1,41 +1,37 @@
 package lk.ijse.gdse.finalproject.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import lk.ijse.gdse.finalproject.db.DBConnection;
 import lk.ijse.gdse.finalproject.dto.LaborDto;
+import lk.ijse.gdse.finalproject.dto.tm.LaborTM;
 import lk.ijse.gdse.finalproject.util.CrudUtil;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class LaborModel {
+
+
     public String getNextLaborID() throws SQLException {
-       // Connection connection = DBConnection.getInstance().getConnection();
-       // String sql = "select LaborID from Labor order by LaborID desc limit 1";
-       // PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
         ResultSet rst =  CrudUtil.execute("select LaborID from Labor order by LaborID desc limit 1");
-        //ResultSet rst = preparedStatement.executeQuery();
+
         if (rst.next()){
-            String lastId = rst.getString(1); // C002
-            String substring = lastId.substring(1); // 002
-            int i = Integer.parseInt(substring); // 2
-            int newIdIndex = i+1; // 3
-//            String newId = ; // C003
+            String lastId = rst.getString(1);
+            String substring = lastId.substring(1);
+            int i = Integer.parseInt(substring);
+            int newIdIndex = i+1;
+
             return String.format("L%03d",newIdIndex);
         }
         return  "L001";
     }
     public boolean saveLabor(LaborDto laborDto) throws SQLException {
-        /*Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "insert into Labor values (?,?,?,?,?)";
-        PreparedStatement pst = connection.prepareStatement(sql);
 
-        pst.setObject(1,laborDto.getLaborId());
-        pst.setObject(2,laborDto.getName());
-        pst.setObject(3,laborDto.getAge());
-        pst.setObject(4,laborDto.getAddress());
-        pst.setObject(5,laborDto.getContactNumber());
-
-        int result = pst.executeUpdate();*/
         boolean isSaved = CrudUtil.execute(
                 "insert into Labor values (?,?,?,?,?)",
                 laborDto.getLaborID(),
@@ -106,4 +102,36 @@ public class LaborModel {
         return null;
     }
 
-}
+    public int getWorkingDays(String LaborID,int month,int year) throws SQLException {
+        String query = "SELECT count(*) as WorkingDays FROM Attendance WHERE LaborID = ? AND MONTH(Date) = ? AND YEAR(Date) = ? AND status = 'Present'";
+
+        ResultSet rst = CrudUtil.execute(query, LaborID, month, year);
+
+        if (rst.next()) {
+            return rst.getInt("WorkingDays");
+        }
+        return 0;
+    }
+    public int getTotalLabors() throws SQLException {
+        String query = "select count(*) as TotalLabors FROM Labor";
+        ResultSet rst = CrudUtil.execute(query);
+        if (rst.next()) {
+            return rst.getInt(1);
+        }
+        return 0;
+    }
+    public int getTotalOvertTime(String LaborID,int month,int year) throws SQLException {
+        int OverTime = 0;
+        String query = "select SUM(OverTime) as TotalOverTime from Shift where LaborID = ? AND Month(Date) = ? AND Year(Date) = ?";
+
+        ResultSet rst = CrudUtil.execute(query, LaborID, month, year);
+
+        if (rst.next()) {
+            return rst.getInt("TotalOverTime");
+        }
+        return 0;
+    }
+
+
+    }
+

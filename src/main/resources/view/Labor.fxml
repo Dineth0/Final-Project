@@ -5,95 +5,41 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="laborpage" prefHeight="519.0" prefWidth="508.0" style="visibility: #A2CA71;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.LaborController">
+<AnchorPane fx:id="laborpage" prefHeight="650.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.LaborController">
    <children>
-      <VBox layoutX="7.0" layoutY="7.0" prefHeight="164.0" prefWidth="494.0" AnchorPane.bottomAnchor="348.3333333333333" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.666666666666629" AnchorPane.topAnchor="7.0">
+      <ImageView fitHeight="650.0" fitWidth="840.0">
+         <image>
+            <Image url="@images/lms2.jpeg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="20.0" layoutY="4.0" prefHeight="63.0" prefWidth="725.0" text="LABOR DETAILS" textFill="#e2e1e6">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="57.0" prefHeight="63.0" prefWidth="725.0" text="Current Labours in Factory" textFill="#e2e1e6">
+         <font>
+            <Font name="Bodoni MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="labortable1" layoutX="21.0" layoutY="129.0" onMouseClicked="#onTableClicked" prefHeight="195.0" prefWidth="798.0" style="-fx-background-color: #C8FFE0;">
+         <columns>
+            <TableColumn fx:id="colid" prefWidth="75.0" text="LaborID" />
+            <TableColumn fx:id="colname" prefWidth="75.0" text="Name" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" layoutX="21.0" layoutY="335.0" prefHeight="42.0" prefWidth="526.0" spacing="30.0">
          <children>
-            <VBox prefHeight="168.0" prefWidth="494.0" spacing="5.0">
-               <children>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="160.0" prefHeight="27.2">
-                     <children>
-                        <Label prefWidth="150.0" text="     LaborID" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblLaborID" layoutX="10.0" layoutY="15.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" text="1" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT">
-                     <children>
-                        <Label prefWidth="150.0" text="     Name" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtname" prefHeight="28.0" prefWidth="281.0" promptText="Labor" style="-fx-background-color: #96E9C6; -fx-border-color: #FFAD60; -fx-border-width: 0 0 1px 0;" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="451.0">
-                     <children>
-                        <Label prefWidth="150.0" text="      Age" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtage" promptText="000000000000" style="-fx-background-color: #96E9C6; -fx-border-color: #FFAD60; -fx-border-width: 0 0 1px 0;" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="48.0" prefHeight="28.0" prefWidth="302.0">
-                     <children>
-                        <Label prefHeight="17.0" prefWidth="150.0" text="     Address" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtaddress" promptText="customer@gmail.com" style="-fx-background-color: #96E9C6; -fx-border-color: #FFAD60; -fx-border-width: 0 0 1px 0;" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="36.0">
-                     <children>
-                        <Label prefWidth="150.0" text="     ContactNumber" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtconnumber" promptText="0777777777" style="-fx-background-color: #96E9C6; -fx-border-color: #FFAD60; -fx-border-width: 0 0 1px 0;" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-      <HBox alignment="CENTER_RIGHT" layoutX="15.0" layoutY="196.0" prefHeight="27.0" prefWidth="526.0" spacing="30.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
-         <children>
-            <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GenarateReportOnAction" style="-fx-background-color: #7f8c8d;" text="Generate Report" textFill="WHITE" HBox.hgrow="ALWAYS">
+            <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#AddOnAction" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: #8d99ae;" text="Add Labor" textFill="WHITE" HBox.hgrow="ALWAYS">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
@@ -101,31 +47,7 @@
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor>
             </Button>
-            <Button layoutX="290.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ResetOnAction" prefWidth="80.0" style="-fx-background-color: #e74c3c;" text="Reset" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btndelete" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#DeleteOnAction" prefWidth="80.0" style="-fx-background-color: #c0392b;" text="Delete" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnupdate" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#UpdateOnAction" prefWidth="80.0" style="-fx-background-color: #3498db;" text="Update" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnsave" layoutX="462.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#SaveOnAction" prefWidth="80.0" style="-fx-background-color: #2ecc71;" text="Save" textFill="WHITE">
+            <Button fx:id="addid" layoutX="655.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GenerateReportOnAction" prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: #8d99ae;" text="Genarate Labor Report" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font>
@@ -135,17 +57,105 @@
             </Button>
          </children>
       </HBox>
-      <TableView fx:id="labortable" layoutX="-1.0" layoutY="249.0" onMouseClicked="#onTableClicked" prefHeight="270.0" prefWidth="557.0" style="-fx-background-color: #C8FFE0;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
-         <columns>
-            <TableColumn fx:id="colid" prefWidth="75.0" text="LaborID" />
-            <TableColumn fx:id="colname" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="colage" prefWidth="75.0" text="Age" />
-            <TableColumn fx:id="coladdress" prefWidth="75.0" text="Address" />
-            <TableColumn fx:id="colconnumber" prefWidth="75.0" text="ContactNumber" />
-         </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
+      <HBox alignment="CENTER_RIGHT" layoutX="21.0" layoutY="377.0" prefHeight="42.0" prefWidth="526.0" spacing="30.0">
+         <children>
+            <Button fx:id="attendid" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#MarkAttendanceOnAction" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: #8d99ae;" text="Mark Attendance" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="addid1" layoutX="655.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GenerateAttendanceReportOnAction" prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: #8d99ae;" text="Genarate Attendance Report" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="21.0" layoutY="418.0" prefHeight="42.0" prefWidth="526.0" spacing="30.0">
+         <children>
+            <Button fx:id="addshift" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#AddShiftOnAction" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: #8d99ae;" text="Add Shift" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="addid11" layoutX="655.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShiftReportOnAction" prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: #8d99ae;" text="Genarate Shift Report" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="21.0" layoutY="458.0" prefHeight="42.0" prefWidth="526.0" spacing="30.0">
+         <children>
+            <Button fx:id="leaveid" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#AddLeaveOnAction" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: #8d99ae;" text="Add Leave" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="leavereport" layoutX="655.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GenerateLeaveReportOnAction" prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: #8d99ae;" text="Genarate Leave Report" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="21.0" layoutY="497.0" prefHeight="42.0" prefWidth="526.0" spacing="30.0">
+         <children>
+            <Button fx:id="addtraining" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#AddTrainingOnAction" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: #8d99ae;" text="Add Training" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="655.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GenerateTrainingReportOnAction" prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: #8d99ae;" text="Genarate Training Report" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="21.0" layoutY="539.0" prefHeight="42.0" prefWidth="526.0" spacing="30.0">
+         <children>
+            <Button fx:id="addunionmember" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#AddUnionMemberOnAction" prefHeight="27.0" prefWidth="269.0" style="-fx-background-color: #8d99ae;" text="Add Uninon Member" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="655.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GenerateUmemberReportOnAction" prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: #8d99ae;" text="Genarate Member Report" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

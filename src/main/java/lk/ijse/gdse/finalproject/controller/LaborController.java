@@ -4,10 +4,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import lk.ijse.gdse.finalproject.db.DBConnection;
 import lk.ijse.gdse.finalproject.dto.LaborDto;
 import lk.ijse.gdse.finalproject.dto.tm.LaborTM;
@@ -15,6 +22,7 @@ import lk.ijse.gdse.finalproject.model.LaborModel;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -27,14 +35,7 @@ public class LaborController implements Initializable {
     @FXML
     private AnchorPane laborpage;
 
-    @FXML
-    private TableColumn<LaborTM, String> coladdress;
 
-    @FXML
-    private TableColumn<LaborTM, Integer> colage;
-
-    @FXML
-    private TableColumn<LaborTM, String> colconnumber;
 
     @FXML
     private TableColumn<LaborTM, String> colid;
@@ -43,75 +44,51 @@ public class LaborController implements Initializable {
     private TableColumn<LaborTM, String> colname;
 
     @FXML
-    private TableView<LaborTM> labortable;
+    private TableView<LaborTM> labortable1;
+
 
     @FXML
-    private Label lblLaborID;
+    private Button addid;
+
 
     @FXML
-    private TextField txtaddress;
+    private Button attendid;
+
 
     @FXML
-    private TextField txtage;
+    private Button addshift;
+
 
     @FXML
-    private TextField txtconnumber;
+    private Button leaveid;
+
 
     @FXML
-    private TextField txtname;
+    private Button addtraining;
 
     @FXML
-    private Button btndelete;
+    private Button addunionmember;
 
-    @FXML
-    private Button btnsave;
-
-    @FXML
-    private Button btnupdate;
-
+    LaborModel laborModel = new LaborModel();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colid.setCellValueFactory(new PropertyValueFactory<>("LaborID"));
         colname.setCellValueFactory(new PropertyValueFactory<>("Name"));
-        colage.setCellValueFactory(new PropertyValueFactory<>("Age"));
-        coladdress.setCellValueFactory(new PropertyValueFactory<>("Address"));
-        colconnumber.setCellValueFactory(new PropertyValueFactory<>("ContactNumber"));
 
-        /*LaborTM laborTM = new LaborTM("L001", "Nimal", 45, "No 15,dffg", "0775643678");
-
-        ArrayList<LaborTM> labortmsArray = new ArrayList<>();
-        labortmsArray.add(laborTM);
-
-        ObservableList<LaborTM> laborTMS = FXCollections.observableArrayList();
-
-        laborTMS.addAll(labortmsArray);
-        labortable.setItems(laborTMS);*/
-
-        try {
-            loadNextLaborID();
-            //loadTableData();
+        try{
+            loadTableData();
             refreshPage();
-        } catch (Exception e) {
+        }catch (SQLException e){
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Fail to load customer id").show();
         }
     }
-    private void refreshPage() throws SQLException {
-        loadNextLaborID();
-        loadTableData();
+   private void refreshPage() throws SQLException {
+       loadTableData();
+   }
 
-        btndelete.setDisable(false);
-        btnsave.setDisable(false);
-        btnupdate.setDisable(true);
+    AddLaborController addLaborController = new AddLaborController();
 
-        txtname.setText("");
-        txtage.setText("");
-        txtaddress.setText("");
-        txtconnumber.setText("");
-    }
-
-    LaborModel laborModel = new LaborModel();
 
     private void loadTableData() throws SQLException {
         ArrayList<LaborDto> laborDtos = laborModel.getAllLabors();
@@ -128,152 +105,155 @@ public class LaborController implements Initializable {
             );
             laborTMS.add(laborTM);
         }
-        labortable.setItems(laborTMS);
-    }
-
-    private void loadNextLaborID() throws SQLException {
-        String nextLaborID = laborModel.getNextLaborID();
-        lblLaborID.setText(nextLaborID);
+        labortable1.setItems(laborTMS);
     }
 
     @FXML
-    void SaveOnAction(ActionEvent event) throws SQLException {
-        String LaborID = lblLaborID.getText();
-        String Name = txtname.getText();
-        int Age = Integer.parseInt(txtage.getText());
-        String Address = txtaddress.getText();
-        String ContactNumber = txtconnumber.getText();
-
-        txtname.setStyle(txtname.getStyle() + ";-fx-border-color:  #FFAD60;");
-        txtage.setStyle(txtage.getStyle() + ";-fx-border-color:  #FFAD60;");
-        txtaddress.setStyle(txtaddress.getStyle() + ";-fx-border-color:  #FFAD60;");
-        txtconnumber.setStyle(txtconnumber.getStyle() + ";-fx-border-color:  #FFAD60;");
-
-        String NamePattern = "^[A-Za-z ]+$";
-        //Integer AgePattern = Integer.parseInt(Age + "^([3-9]|[1-6][0-9])$");
-        String AddressPattern = "^[a-zA-Z0-9\s,.'-]{3,}$";
-        String ContactNumberPattern = "^(\\d+)||((\\d+\\.)(\\d){2})$";
-
-
-        boolean isValidName = Name.matches(NamePattern);
-       // boolean isValidAge = Age.matches(AgePattern);
-        boolean isValidAddress = Address.matches(AddressPattern);
-        boolean isValiContanctNumber = ContactNumber.matches(ContactNumberPattern);
-
-
-        if (!isValidName) {
-            System.out.println(txtname.getStyle());
-            txtname.setStyle(txtname.getStyle() + ";-fx-border-color: red;");
-            System.out.println("Invalid name.............");
-//            return;
-        }
-
-
-
-        if (!isValiContanctNumber) {
-            txtconnumber.setStyle(txtconnumber.getStyle() + ";-fx-border-color: red;");
-        }
-
-
-        if (isValidName && isValidAddress && isValiContanctNumber) {
-            LaborDto laborDto = new LaborDto(
-                    LaborID,
-                    Name,
-                    Age,
-                    Address,
-                    ContactNumber
-            );
-
-
-            boolean isSaved = laborModel.saveLabor(laborDto);
-            if (isSaved) {
-
-                refreshPage();
-
-                new Alert(Alert.AlertType.INFORMATION, "Customer saved...!").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Fail to save customer...!").show();
-            }
-        }
-    }
-    @FXML
-    void DeleteOnAction(ActionEvent event) throws SQLException {
-        String LaborID = lblLaborID.getText();
-
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
-        Optional<ButtonType> optionalButtonType = alert.showAndWait();
-
-        if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
-
-            boolean isDelete = laborModel.DeleteLabor(LaborID);
-            if (isDelete) {
-                refreshPage();
-                new Alert(Alert.AlertType.INFORMATION, "Labor deleted...!").show();
-
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Fail to delete Labor...!").show();
-
-            }
-        }
-    }
-
-    @FXML
-    void ResetOnAction(ActionEvent event) throws SQLException {
-        refreshPage();
-    }
-
-
-
-
-
-    @FXML
-    void UpdateOnAction(ActionEvent event) throws SQLException {
-        String LaborID = lblLaborID.getText();
-        String Name = txtname.getText();
-        int Age = Integer.parseInt(txtage.getText());
-        String Address = txtaddress.getText();
-        String ContactNumber = txtconnumber.getText();
-
-        LaborDto laborDto = new LaborDto(
-            LaborID,
-            Name,
-            Age,
-            Address,
-            ContactNumber
-        );
-
-        boolean isUpdate = laborModel.UpdateLabor(laborDto);
-        if(isUpdate){
-            refreshPage();
-            new Alert(Alert.AlertType.INFORMATION,"Labor Updated...!").show();
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Fail to Update Labor...!").show();
-        }
-
-    }
-
-
-    @FXML
-    public void onTableClicked(javafx.scene.input.MouseEvent mouseEvent) {
-        LaborTM laborTM = labortable.getSelectionModel().getSelectedItem();
-        if(laborTM != null){
-            lblLaborID.setText(laborTM.getLaborID());
-            txtname.setText(laborTM.getName());
-            txtage.setText(String.valueOf(laborTM.getAge()));
-            txtaddress.setText(laborTM.getAddress());
-            txtconnumber.setText(laborTM.getContactNumber());
-
-            btndelete.setDisable(false);
-            btnsave.setDisable(true);
-            btnupdate.setDisable(false);
-        }
-    }
-    @FXML
-    void GenarateReportOnAction(ActionEvent event) {
+    void GenerateReportOnAction(ActionEvent event) {
         try {
             JasperReport jasperReport = JasperCompileManager.compileReport(
                     getClass()
                             .getResourceAsStream("/report/LaborReport.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
+    }
+    @FXML
+    void ReportOnAction(ActionEvent event) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass().getResourceAsStream("/report/AttendanceReport.jrxml")
+            );
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
+    }
+    @FXML
+    void AddOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddLabor.fxml"));
+        Parent load = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.setTitle("Add Labors");
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Window underWindow = addid.getScene().getWindow();
+        stage.initOwner(underWindow);
+
+        stage.showAndWait();
+    }
+
+    public void onTableClicked(MouseEvent mouseEvent) {
+    }
+    @FXML
+    void MarkAttendanceOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MarkAttendance.fxml"));
+        Parent load = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.setTitle("Mark Attendances");
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Window underWindow = attendid.getScene().getWindow();
+        stage.initOwner(underWindow);
+
+        stage.showAndWait();
+
+    }
+
+    @FXML
+    void AddShiftOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddShift.fxml"));
+        Parent load = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.setTitle("Add Shifts");
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Window underWindow = attendid.getScene().getWindow();
+        stage.initOwner(underWindow);
+
+        stage.showAndWait();
+    }
+    @FXML
+    void AddLeaveOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddLeave.fxml"));
+        Parent load = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.setTitle("Add Leaves");
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Window underWindow = leaveid.getScene().getWindow();
+        stage.initOwner(underWindow);
+
+        stage.showAndWait();
+    }
+    @FXML
+    void AddTrainingOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddTraining.fxml"));
+        Parent load = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.setTitle("Add Trainings");
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Window underWindow = addtraining.getScene().getWindow();
+        stage.initOwner(underWindow);
+
+        stage.showAndWait();
+    }
+    @FXML
+    void AddUnionMemberOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddUnion-Membership.fxml"));
+        Parent load = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(load));
+        stage.setTitle("Add Union_Members");
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Window underWindow = addunionmember.getScene().getWindow();
+        stage.initOwner(underWindow);
+
+        stage.showAndWait();
+    }
+
+    public void ShiftReportOnAction(ActionEvent actionEvent) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/report/ShiftReport.jrxml"
                             ));
 
             Connection connection = DBConnection.getInstance().getConnection();
@@ -292,7 +272,105 @@ public class LaborController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "DB error...!").show();
         }
     }
+
+    @FXML
+    void GenerateLeaveReportOnAction(ActionEvent event) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/report/LeaveReport.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
     }
+    @FXML
+    void GenerateTrainingReportOnAction(ActionEvent event) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/report/TrainingReport.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
+    }
+    @FXML
+    void GenerateUmemberReportOnAction(ActionEvent event) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/report/UMemberReport.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
+    }
+    @FXML
+    void GenerateAttendanceReportOnAction(ActionEvent event) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/report/AttendanceReport.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
+    }
+
+}
 
 
 

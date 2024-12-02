@@ -14,4 +14,6 @@ public class LaborDto {
     private int Age;
     private String Address;
     private String ContactNumber;
+
+
 }
