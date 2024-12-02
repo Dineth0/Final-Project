@@ -1,0 +1,155 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="RetirementReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="abe4e95e-641a-4c42-be92-814974bddbfa">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (7)"/>
+	<query language="SQL"><![CDATA[select * from Retirement]]></query>
+	<field name="RetirementID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RetirementID"/>
+		<property name="com.jaspersoft.studio.field.label" value="RetirementID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<field name="OfficerID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<field name="RetirementDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="RetirementDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="RetirementDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<field name="TotalYearsWorked" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TotalYearsWorked"/>
+		<property name="com.jaspersoft.studio.field.label" value="TotalYearsWorked"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<field name="FundPayment" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="FundPayment"/>
+		<property name="com.jaspersoft.studio.field.label" value="FundPayment"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retirement"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="74" splitType="Stretch">
+		<element kind="staticText" uuid="c9db1ff9-7623-4433-9cc6-ba41ca186fa3" x="160" y="30" width="208" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Retirement Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="30" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="226ac9d5-3920-45f5-8a0c-06464d94f467" x="0" y="0" width="81" height="30" hTextAlign="Center">
+			<text><![CDATA[RetirementID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="35816e4a-1d7c-43d8-a7a2-0473a5793aca"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="7cb2afd2-39f7-417c-b677-62c7d4f0725e" x="81" y="0" width="79" height="30" hTextAlign="Center">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b8a464ec-29af-4de3-8ac6-775a4a137b7f"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="e3157e79-461d-4d35-984c-c2a38aff77dc" x="160" y="0" width="79" height="30" hTextAlign="Center">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d0f436e-14ff-4b3c-949d-3615de6b4d28"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="e4b14294-2e82-4c5c-9f7c-1a7796f892b8" x="239" y="0" width="79" height="30" hTextAlign="Center">
+			<text><![CDATA[OfficerID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c460278a-33bd-4afe-8ef5-976e59e842ad"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="a948962f-b6da-4fd8-80c1-753421770bfa" x="318" y="0" width="79" height="30" fontSize="10.0" hTextAlign="Center">
+			<text><![CDATA[RetirementDate]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="608106f9-717c-4d34-b03c-fe38db6ae83d"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="cc496ad0-0d07-4c1e-aade-9e3bc24bea23" x="397" y="0" width="93" height="30" hTextAlign="Center">
+			<text><![CDATA[TotalYearsWorked]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68d760f3-b861-49b2-9cd7-0773112acb30"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="7a6b0c3d-1952-4b53-8cd8-6e6d7b2ef90b" x="490" y="0" width="64" height="30" hTextAlign="Center">
+			<text><![CDATA[FundPayment]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d2d1db5-d58b-4b3e-a11c-fd8742519e58"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="fe6bf38a-18e2-4887-a35f-4553df7e124a" x="0" y="0" width="81" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{RetirementID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="35816e4a-1d7c-43d8-a7a2-0473a5793aca"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="022c35d0-f5f4-488d-b46e-275cfc752a5e" x="81" y="0" width="79" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b8a464ec-29af-4de3-8ac6-775a4a137b7f"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="86242619-0742-492b-9232-715e83d1505b" x="160" y="0" width="79" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d0f436e-14ff-4b3c-949d-3615de6b4d28"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="69b68e2b-a8be-42e7-9e41-88e4b8a3321b" x="239" y="0" width="79" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{OfficerID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c460278a-33bd-4afe-8ef5-976e59e842ad"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="fcde6d93-b04a-4eca-8616-7d051011663b" x="318" y="0" width="79" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{RetirementDate}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="608106f9-717c-4d34-b03c-fe38db6ae83d"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="130a8985-f632-4824-912f-d94a1ea6b461" x="397" y="0" width="93" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{TotalYearsWorked}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68d760f3-b861-49b2-9cd7-0773112acb30"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="600039ee-5759-4894-8fbe-7268f3d99407" x="490" y="0" width="65" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{FundPayment}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d2d1db5-d58b-4b3e-a11c-fd8742519e58"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="53" splitType="Stretch"/>
+	<pageFooter height="48" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
