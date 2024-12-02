@@ -1,0 +1,98 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="UMemberReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9076770d-a06b-4bdd-b2f3-49267c57452e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (5)"/>
+	<query language="SQL"><![CDATA[select * from Union_Membership]]></query>
+	<field name="MembershipID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MembershipID"/>
+		<property name="com.jaspersoft.studio.field.label" value="MembershipID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="union_membership"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="union_membership"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="union_membership"/>
+	</field>
+	<field name="Status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Status"/>
+		<property name="com.jaspersoft.studio.field.label" value="Status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="union_membership"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="a0b1b3cb-22ed-4214-9052-5189a7e3cbf9" x="170" y="30" width="250" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Union Membership Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="1" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="3ff5557d-950b-44d2-a497-588edfb27e24" x="0" y="0" width="141" height="30" fontSize="12.0" hTextAlign="Center">
+			<text><![CDATA[MembershipID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b123139d-b7d9-41fa-8c01-4dcc58fc0e2b"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="7adaea10-9a0d-40ff-ba1f-c3dc05f198d4" x="141" y="0" width="138" height="30" fontSize="12.0" hTextAlign="Center">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f05dfac-e1ab-415e-86bb-c61938294247"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="a4ffe863-24c7-4fcb-b5e4-89556f5f2345" x="279" y="0" width="138" height="30" fontSize="12.0" hTextAlign="Center">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a69425f-e079-4d73-a34d-c7b0062f84c0"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="b75d186a-5486-43c4-bcc9-7ee4a8385188" x="417" y="0" width="138" height="30" fontSize="12.0" hTextAlign="Center">
+			<text><![CDATA[Status]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f9f7e0f-b809-4118-9531-1b9ba1eacf1d"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<element kind="textField" uuid="8234fcc9-7294-4ef7-ba79-ce1c56bf25e7" x="0" y="0" width="141" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{MembershipID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b123139d-b7d9-41fa-8c01-4dcc58fc0e2b"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="d9d4b094-1f0a-49ce-a90d-7c36c004ee70" x="141" y="0" width="138" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f05dfac-e1ab-415e-86bb-c61938294247"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="d7ebe0da-1483-4e1c-9ba2-313d0e5c0ddd" x="279" y="0" width="138" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a69425f-e079-4d73-a34d-c7b0062f84c0"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="024e8e96-c296-49bc-8917-590618187320" x="417" y="0" width="138" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Status}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f9f7e0f-b809-4118-9531-1b9ba1eacf1d"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
