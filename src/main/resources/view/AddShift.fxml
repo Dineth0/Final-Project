@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.AddShiftController">
+   <children>
+      <VBox layoutY="1.0" prefHeight="400.0" prefWidth="746.0" />
+      <HBox layoutX="19.0" layoutY="-3.0" prefHeight="59.0" prefWidth="727.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="63.0" prefWidth="725.0" text="ADD LABOR  SHIFTS" textFill="#121212">
+               <font>
+                  <Font name="Bodoni MT Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox layoutX="20.0" layoutY="37.0" prefHeight="219.0" prefWidth="715.0" spacing="5.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="160.0" prefHeight="27.2">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="159.0" text="ShiftID" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblid" layoutX="10.0" layoutY="15.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" text="1" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="157.0" text="LaborID" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comlaborid" onAction="#ComboOnAction" prefHeight="28.0" prefWidth="201.0" style="-fx-background-color: #6c757d;" />
+                  <Label prefHeight="17.0" prefWidth="105.0" text="Name   :">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="lbllaborname" layoutX="239.0" layoutY="14.0" prefHeight="17.0" prefWidth="164.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="451.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="158.0" text="SupervisorID" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comsupid" onAction="#Combo1OnActon" prefHeight="28.0" prefWidth="197.0" style="-fx-background-color: #6c757d;" />
+                  <Label prefHeight="17.0" prefWidth="105.0" text="Name    :">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="lblsupname" prefHeight="17.0" prefWidth="176.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="48.0" prefHeight="28.0" prefWidth="454.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="159.0" text="Date" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbldate" contentDisplay="TOP" layoutX="10.0" layoutY="15.0" prefHeight="17.0" prefWidth="177.0" text="2099-01-01">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="36.0" prefHeight="28.0" prefWidth="374.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="159.0" text="StartTime" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtstrat" prefHeight="27.0" prefWidth="199.0" promptText="StartTime" style="-fx-background-color: #6c757d; -fx-border-color: #343a40; -fx-border-width: 0 0 1px 0;" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="105.0" text="EndTime">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="txtend" layoutX="161.0" layoutY="11.0" prefHeight="27.0" prefWidth="248.0" promptText="EndTime" style="-fx-background-color: #6c757d; -fx-border-color: #343a40; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="494.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="160.0" text="OverTime">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="txtover" prefHeight="27.0" prefWidth="201.0" promptText="OverTime" style="-fx-background-color: #6c757d; -fx-border-color: #343a40; -fx-border-width: 0 0 1px 0;" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="16.0" layoutY="264.0" prefHeight="27.0" prefWidth="715.0" spacing="30.0">
+         <children>
+            <Button layoutX="290.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#restOnAction" prefWidth="80.0" style="-fx-background-color: #8d99ae;" text="Reset" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btndelete" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#DeleteOnAction" prefWidth="80.0" style="-fx-background-color: #8d99ae;" text="Delete" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnupdate" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#UpdateOnAction" prefWidth="80.0" style="-fx-background-color: #8d99ae;" text="Update" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnsave" layoutX="462.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#SaveONAction" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: #8d99ae;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="tableaddshift" layoutX="5.0" layoutY="310.0" onMouseClicked="#OnClikedTable" prefHeight="201.0" prefWidth="737.0">
+         <columns>
+            <TableColumn fx:id="colshift" prefWidth="75.0" text="ShiftID" />
+            <TableColumn fx:id="collabor" prefWidth="75.0" text="LaborID" />
+            <TableColumn fx:id="colsup" prefWidth="93.33328247070312" text="SupervisorID" />
+            <TableColumn fx:id="coldate" prefWidth="139.3333282470703" text="Date" />
+            <TableColumn fx:id="colstart" prefWidth="119.3333740234375" text="StartTime" />
+            <TableColumn fx:id="colend" prefWidth="112.00003051757812" text="EndTime" />
+            <TableColumn fx:id="colover" prefWidth="102.66668701171875" text="OverTime" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
