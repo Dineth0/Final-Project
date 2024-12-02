@@ -1,0 +1,136 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="ComplaintReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="267ce72b-db92-479c-9990-15180f6f2489">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (17)"/>
+	<query language="SQL"><![CDATA[select* from Complaint]]></query>
+	<field name="ComplaintID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ComplaintID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ComplaintID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="complaint"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="complaint"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="complaint"/>
+	</field>
+	<field name="Description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Description"/>
+		<property name="com.jaspersoft.studio.field.label" value="Description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="complaint"/>
+	</field>
+	<field name="Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="complaint"/>
+	</field>
+	<field name="Manager_Seen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Manager_Seen"/>
+		<property name="com.jaspersoft.studio.field.label" value="Manager_Seen"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="complaint"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="ef899071-165e-438d-a038-7f9edd9814f2" x="160" y="30" width="208" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Complaints Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="a659584b-7018-4e28-bfda-dade10798a44" x="0" y="0" width="95" height="30">
+			<text><![CDATA[ComplaintID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="80dc5a6f-eac1-4b1e-94e0-d721a99e3c70"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="a0a831d7-7ee6-49fa-ad3a-31d68291c0b0" x="95" y="0" width="92" height="30">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca6effdb-e0ae-4357-a8a5-a5b950e30e22"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="8f8bc49e-95ec-42cb-9822-26ad51afc388" x="187" y="0" width="92" height="30">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0dd3ac5b-ddcb-4f8b-ab25-ba08da817ab9"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="b6504d85-439d-4720-b71d-44f06caec671" x="279" y="0" width="92" height="30">
+			<text><![CDATA[Description]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b3948aa-2f4b-4e6d-aa1d-d7667bf8d8bf"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="a82b86dd-4f15-4133-8a90-46a07fa143eb" x="371" y="0" width="92" height="30">
+			<text><![CDATA[Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="08eb5816-6183-4df5-a3f0-d8f48e098b15"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="a9e214c9-236c-4332-82eb-83793153e937" x="463" y="0" width="92" height="30">
+			<text><![CDATA[Manager_Seen]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c35f8ef-3d5b-4c5c-8110-9083639e0c25"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<element kind="textField" uuid="7f895f91-c7a6-4357-9391-c36312f6156d" x="0" y="0" width="95" height="30">
+				<expression><![CDATA[$F{ComplaintID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="80dc5a6f-eac1-4b1e-94e0-d721a99e3c70"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="ce189f0b-d4ae-4a13-9728-03e7f9ac38d7" x="95" y="0" width="92" height="30">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca6effdb-e0ae-4357-a8a5-a5b950e30e22"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="e5419b54-b7b3-4583-9694-5acbf1d51869" x="187" y="0" width="92" height="30">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0dd3ac5b-ddcb-4f8b-ab25-ba08da817ab9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="5eea16ce-dc37-497d-b6fb-2387ad03e501" x="279" y="0" width="92" height="30">
+				<expression><![CDATA[$F{Description}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b3948aa-2f4b-4e6d-aa1d-d7667bf8d8bf"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="2448096a-9226-4f6e-b875-09bd5335e713" x="371" y="0" width="92" height="30">
+				<expression><![CDATA[$F{Date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="08eb5816-6183-4df5-a3f0-d8f48e098b15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="578ae56f-b9fd-4a96-a923-d7312ea42086" x="463" y="0" width="92" height="30">
+				<expression><![CDATA[$F{Manager_Seen}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c35f8ef-3d5b-4c5c-8110-9083639e0c25"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
