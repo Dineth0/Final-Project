@@ -1,0 +1,60 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="EuipmentReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="934386b9-086e-4aba-8112-8a6f642a4878">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (20)"/>
+	<query language="SQL"><![CDATA[select * from Equipment]]></query>
+	<field name="EquipmentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EquipmentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="EquipmentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
+	<field name="EquipmentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EquipmentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="EquipmentName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="cea6c36a-20ba-4110-b4cd-060fa78d05dd" x="193" y="40" width="160" height="30" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Equipment Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="19" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="efd35584-ac4d-4ca0-8f34-e714fd3fbe1e" x="0" y="0" width="278" height="30" hTextAlign="Center">
+			<text><![CDATA[EquipmentID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ae4c7fac-5870-45ed-80dd-85f704754600"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="c6c2cb32-ea8e-4db1-9528-83ba66febe72" x="278" y="0" width="277" height="30" hTextAlign="Center">
+			<text><![CDATA[EquipmentName]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8dc84a09-198e-409d-bdb6-c11f92e19acc"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="f65188c4-70d4-4a1f-ae61-f63545321ceb" x="0" y="0" width="278" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{EquipmentID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ae4c7fac-5870-45ed-80dd-85f704754600"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="49bc1d78-a18b-4177-824c-b5e9f3a5edb2" x="278" y="0" width="277" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{EquipmentName}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8dc84a09-198e-409d-bdb6-c11f92e19acc"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

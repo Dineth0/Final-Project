@@ -1,0 +1,117 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="EquipmentUsageReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2237e6a9-2e59-42ff-bd2f-7623e290ea1b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (21)"/>
+	<query language="SQL"><![CDATA[select * from EquipmentUsage]]></query>
+	<field name="EquipmentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EquipmentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="EquipmentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipmentusage"/>
+	</field>
+	<field name="EquipmentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EquipmentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="EquipmentName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipmentusage"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipmentusage"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipmentusage"/>
+	</field>
+	<field name="UseDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="UseDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="UseDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipmentusage"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="9755eb6a-ca8d-4288-927e-b072ce22478b" x="156" y="40" width="247" height="30" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Equipment Usage Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="16" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="acb86037-50fb-4156-a265-4ec77f6f4734" x="0" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[EquipmentID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="081be6e9-397d-424e-b5b0-1707d97d79ef"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="1096aad3-6c59-4de6-bc6b-2907af8da003" x="111" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[EquipmentName]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66ea641f-9ffe-43ea-8dcd-2bb3a87a0b15"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="29fa0748-f592-4b82-b580-ebc1c439fb27" x="222" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea57d1e0-87ed-43c2-a615-ea2471a9e505"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="3bb2f37d-59b3-4138-909f-1adbc576f1e1" x="333" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="72e9421c-4855-447b-bf93-fa266dc74812"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="37ddc02b-b40a-4abb-a517-afe211d35570" x="444" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[UseDate]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="50686fcd-1e39-4e87-8fca-6e2d772e1a37"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="63b3bc1c-7eb0-4d75-9c98-cb2ca2590c30" x="0" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{EquipmentID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="081be6e9-397d-424e-b5b0-1707d97d79ef"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="1bb3f7ff-2db6-4714-a1f7-bd29f62d3ed4" x="111" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{EquipmentName}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66ea641f-9ffe-43ea-8dcd-2bb3a87a0b15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="98a1dfb6-4fbb-4332-ad96-e0c78fb705c4" x="222" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea57d1e0-87ed-43c2-a615-ea2471a9e505"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="09b12220-0972-497c-98d5-e35c5ac083a9" x="333" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="72e9421c-4855-447b-bf93-fa266dc74812"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="b655e5a2-3baa-4f81-b68a-591dec52f0d7" x="444" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{UseDate}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="50686fcd-1e39-4e87-8fca-6e2d772e1a37"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
