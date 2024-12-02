@@ -1,6 +1,7 @@
 package lk.ijse.gdse.finalproject;
 
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
+
 public class AppInitializer extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -16,12 +18,40 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent load = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/LoginForm.fxml")));
-        stage.setScene(new Scene(load, 720, 605));
-        stage.setTitle("LMS");
-        //Image image = new Image(getClass().getResourceAsStream("/images/Labor-Management-System.png"));
-       // stage.getIcons().add(image);
 
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/LoadingScreen.fxml"))));
         stage.show();
+
+
+        Task<Scene> loadingTask = new Task<>() {
+            @Override
+            protected Scene call() throws Exception {
+
+                FXMLLoader fxmlLoader = new FXMLLoader(AppInitializer.class.getResource("/view/LoginForm.fxml"));
+                return new Scene(fxmlLoader.load());
+            }
+        };
+
+
+        loadingTask.setOnSucceeded(event -> {
+            Scene value = loadingTask.getValue();
+
+            stage.setTitle("Labor Management System");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/image/worker.png")));
+            stage.setMaximized(true);
+
+
+            stage.setScene(value);
+
+            stage.show();
+        });
+
+
+        loadingTask.setOnFailed(event -> {
+            System.err.println("Failed to load the main layout.");
+        });
+
+        new Thread(loadingTask).start();
+
     }
 }
