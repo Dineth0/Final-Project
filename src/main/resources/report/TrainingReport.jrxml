@@ -1,0 +1,117 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="TrainingReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa5f659e-4b7a-4e1d-917c-89981d90aa63">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (4)"/>
+	<query language="SQL"><![CDATA[select * from Training]]></query>
+	<field name="TrainingID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TrainingID"/>
+		<property name="com.jaspersoft.studio.field.label" value="TrainingID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="training"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="training"/>
+	</field>
+	<field name="OfficerID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="training"/>
+	</field>
+	<field name="Description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Description"/>
+		<property name="com.jaspersoft.studio.field.label" value="Description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="training"/>
+	</field>
+	<field name="Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="training"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="d9c61998-2dd2-4c54-b6f9-f5f14b4391c9" x="200" y="40" width="142" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Training Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="0d04f5f7-4feb-4d5b-88ce-bb9cbb6a802d" x="0" y="0" width="111" height="30" forecolor="#0D0909" hTextAlign="Center">
+			<text><![CDATA[TrainingID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b5ad1fb-358e-4f61-a795-e50536a1749b"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="52113a08-b2d8-45e4-82e8-d55eba7aac2f" x="111" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11e1b887-8ce6-4046-abaa-bb898efb504d"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="d06ffaac-1ef2-422b-a8dc-52ce95571dd3" x="222" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[OfficerID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d24f026-e96f-4562-8ab6-38f99857acba"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="381d9463-18ce-416e-8865-ad21a6251bae" x="333" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[Description]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="815591c5-cb3d-40ff-b01c-2321508a6b51"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="377445da-bb15-44b5-905c-4285221757ea" x="444" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b31539b-4334-4a90-b566-0e5614b0bf69"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<element kind="textField" uuid="63768121-471d-4d0e-9a67-0be3812c45d3" x="0" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{TrainingID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b5ad1fb-358e-4f61-a795-e50536a1749b"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="69c8c026-de8c-4cb6-89ce-54b71dd7f49b" x="111" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11e1b887-8ce6-4046-abaa-bb898efb504d"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="8c6c1247-3124-411f-87ec-ba2103e39333" x="222" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{OfficerID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d24f026-e96f-4562-8ab6-38f99857acba"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="f2bdbf42-9e88-4d8e-8d44-f6e6cf42abf4" x="333" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Description}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="815591c5-cb3d-40ff-b01c-2321508a6b51"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="0071fe07-f618-4546-898b-04b8afb2b93b" x="444" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b31539b-4334-4a90-b566-0e5614b0bf69"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
