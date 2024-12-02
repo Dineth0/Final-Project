@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.SeeLaborsController">
+   <children>
+      <VBox prefHeight="297.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="labortable2" onMouseClicked="#onTableClicked" prefHeight="299.0" prefWidth="600.0" style="-fx-background-color: #C8FFE0;">
+               <columns>
+                  <TableColumn fx:id="colid" prefWidth="75.0" text="LaborID" />
+                  <TableColumn fx:id="colname" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="colage" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="coladdress" prefWidth="75.0" text="Address" />
+                  <TableColumn fx:id="colconnumber" prefWidth="75.0" text="ContactNumber" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

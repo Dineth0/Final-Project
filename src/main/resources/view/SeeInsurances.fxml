@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.SeeInsurancesController">
+   <children>
+      <VBox prefHeight="300.0" prefWidth="731.0">
+         <children>
+            <TableView fx:id="tableaddinsurance1" onMouseClicked="#OnTableClicked" prefHeight="300.0" prefWidth="731.0">
+               <columns>
+                  <TableColumn fx:id="colnumber" prefWidth="112.00000250339508" text="PolicyNumber" />
+                  <TableColumn fx:id="colacc" prefWidth="123.33330535888672" text="AccidentID" />
+                  <TableColumn fx:id="colname" prefWidth="198.0000457763672" text="LaborName" />
+                  <TableColumn fx:id="colofficer" prefWidth="129.33328247070312" text="OfficerID" />
+                  <TableColumn fx:id="colpayment" prefWidth="164.00006103515625" text="InsurancePayment" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

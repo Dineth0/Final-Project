@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="297.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.SeeLeaveController">
+   <children>
+      <VBox layoutY="1.0" prefHeight="302.0" prefWidth="718.0">
+         <children>
+            <TableView fx:id="tableaddleave1" onMouseClicked="#OnTableClicked" prefHeight="300.0" prefWidth="718.0" style="-fx-background-color: #C8FFE0;">
+               <columns>
+                  <TableColumn fx:id="colleave" prefWidth="61.333343505859375" text="LeaveID" />
+                  <TableColumn fx:id="collabor" prefWidth="61.333282470703125" text="LaborID" />
+                  <TableColumn fx:id="colofficer" prefWidth="79.33333587646484" text="OfficerID" />
+                  <TableColumn fx:id="colname" prefWidth="132.66664123535156" text="Name" />
+                  <TableColumn fx:id="coldate" prefWidth="113.33331298828125" text="LeaveDate" />
+                  <TableColumn fx:id="colreason" prefWidth="183.33328247070312" text="Reason" />
+                  <TableColumn fx:id="colstatus" prefWidth="86.0" text="Status" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

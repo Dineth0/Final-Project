@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="291.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.SeeRetirementsController">
+   <children>
+      <VBox prefHeight="299.0" prefWidth="733.0">
+         <children>
+            <TableView fx:id="tableaddretirement1" onMouseClicked="#TableOnClicked" prefHeight="299.0" prefWidth="733.0">
+               <columns>
+                  <TableColumn fx:id="colretire" prefWidth="84.00000250339508" text="RetirementID" />
+                  <TableColumn fx:id="collabor" prefWidth="72.66667938232422" text="LaborID" />
+                  <TableColumn fx:id="colname" prefWidth="174.00001525878906" text="Name" />
+                  <TableColumn fx:id="colofficer" prefWidth="86.66668701171875" text="OfficerID" />
+                  <TableColumn fx:id="coldate" prefWidth="107.33328247070312" text="RetirementDate" />
+                  <TableColumn fx:id="coltyw" prefWidth="107.3333740234375" text="TotalYearsWorked" />
+                  <TableColumn fx:id="colfpayment" prefWidth="96.00006103515625" text="FundPayment" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

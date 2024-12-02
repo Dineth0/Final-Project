@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="291.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.SeeShiftsController">
+   <children>
+      <VBox prefHeight="303.0" prefWidth="721.0">
+         <children>
+            <TableView fx:id="tableaddshift1" onMouseClicked="#OnClikedTable" prefHeight="309.0" prefWidth="721.0" style="-fx-background-color: #3a7ca5;">
+               <columns>
+                  <TableColumn fx:id="colshift" prefWidth="75.0" text="ShiftID" />
+                  <TableColumn fx:id="collabor" prefWidth="75.0" text="LaborID" />
+                  <TableColumn fx:id="colsup" prefWidth="93.33328247070312" text="SupervisorID" />
+                  <TableColumn fx:id="coldate" prefWidth="139.3333282470703" text="Date" />
+                  <TableColumn fx:id="colstart" prefWidth="119.3333740234375" text="StartTime" />
+                  <TableColumn fx:id="colend" prefWidth="112.00003051757812" text="EndTime" />
+                  <TableColumn fx:id="colover" prefWidth="102.66668701171875" text="OverTime" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
