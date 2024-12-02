@@ -9,38 +9,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="LoginPage" cache="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="605.0" prefWidth="720.0" style="visibility: #6AA081;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.LoginFormController">
+<AnchorPane fx:id="LoginPage" cache="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="650.0" prefWidth="1039.0" style="visibility: #6AA081;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.LoginFormController">
    <children>
-      <ImageView fitHeight="607.0" fitWidth="720.0">
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="650.0" prefWidth="709.0" />
+      <AnchorPane layoutX="744.0" prefHeight="650.0" prefWidth="295.0" style="-fx-background-color: #2b2d42;">
+         <children>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="21.0" prefHeight="66.0" prefWidth="281.0" text="WELLCOM TO RUBBER FACTORY" textFill="#a19ca1">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="9.0" layoutY="62.0" prefHeight="66.0" prefWidth="281.0" text="LABOR MANAGEMENT SYSTEM" textFill="#a19ca1">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsername" layoutX="93.0" layoutY="198.0" prefHeight="32.0" prefWidth="163.0" promptText="UserName" style="-fx-background-color: #3e5c76;" />
+            <ImageView fitHeight="19.0" fitWidth="17.0" layoutX="66.0" layoutY="208.0">
+               <image>
+                  <Image url="@images/user.png" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="txtPassword" layoutX="95.0" layoutY="254.0" prefHeight="32.0" prefWidth="163.0" promptText="Password" style="-fx-background-color: #3e5c76;" />
+            <ImageView fitHeight="19.0" fitWidth="17.0" layoutX="69.0" layoutY="260.0">
+               <image>
+                  <Image url="@images/padlock.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="56.0" layoutY="369.0" mnemonicParsing="false" onAction="#LoginOnAction" prefHeight="42.0" prefWidth="191.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 20;" text="LOGIN">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="650.0" fitWidth="744.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@images/login_background.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtUsername" layoutX="242.0" layoutY="135.0" prefHeight="32.0" prefWidth="201.0" style="-fx-background-color: #86D293;" />
-      <Label layoutX="71.0" layoutY="132.0" text="Username" textFill="#e42525">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="71.0" layoutY="184.0" text="Password" textFill="#e42525">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Button layoutX="169.0" layoutY="308.0" mnemonicParsing="false" onAction="#LoginOnAction" prefHeight="32.0" prefWidth="113.0" style="-fx-background-color: #BEDC74;" text="LOGIN">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <PasswordField fx:id="txtPassword" layoutX="242.0" layoutY="186.0" prefHeight="32.0" prefWidth="201.0" style="-fx-background-color: #86D293;" />
-      <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="214.0" layoutY="138.0">
-         <image>
-            <Image url="@images/user.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="214.0" layoutY="189.0">
-         <image>
-            <Image url="@images/padlock.png" />
+            <Image url="@images/lms3.jpeg" />
          </image>
       </ImageView>
    </children>
