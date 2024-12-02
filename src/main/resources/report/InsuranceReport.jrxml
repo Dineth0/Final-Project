@@ -1,0 +1,117 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="InsuranceReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e162dff8-ed52-4cbc-9e2f-9242fa520831">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (11)"/>
+	<query language="SQL"><![CDATA[select * from Insuranace]]></query>
+	<field name="PolicyNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PolicyNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="PolicyNumber"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="insuranace"/>
+	</field>
+	<field name="AccidentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AccidentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="AccidentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="insuranace"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="insuranace"/>
+	</field>
+	<field name="OfficerID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="insuranace"/>
+	</field>
+	<field name="InsurancePayment" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="InsurancePayment"/>
+		<property name="com.jaspersoft.studio.field.label" value="InsurancePayment"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="insuranace"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="48dfb0a0-fad1-43f4-89d4-2edf313fd592" x="160" y="30" width="208" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Insurance Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="cb5f76bc-c1eb-400c-a984-845def103084" x="0" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[PolicyNumber]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab8d436a-3bfd-4c18-a803-1e64f59c971b"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="83786630-78aa-456e-b751-7b6e7d772e98" x="111" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[AccidentID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e5cd7da-01f2-4ec0-a468-511e0ea83819"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="600e7a5c-0868-404d-b91f-d19af47cae6d" x="222" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5b8e69c-9c5a-4319-aa68-9b939b40c1f8"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="cc112147-700a-4538-8e31-b968192993da" x="333" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[OfficerID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="feb8bd6a-bd7b-4b4c-83d7-fee17de8ceb8"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="e5e9966e-f0af-49b2-95d6-7de847152761" x="444" y="0" width="111" height="30" hTextAlign="Center">
+			<text><![CDATA[InsurancePayment]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dba73982-9ac1-4134-af81-5548d1d74f13"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="9e28359a-d581-41b1-9bbb-fa36e2e4c326" x="0" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{PolicyNumber}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab8d436a-3bfd-4c18-a803-1e64f59c971b"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="26021eec-e7d7-4c73-8c33-276f64b224bc" x="111" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{AccidentID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e5cd7da-01f2-4ec0-a468-511e0ea83819"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="706f3e48-863a-4551-acf7-7957f45385ea" x="222" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5b8e69c-9c5a-4319-aa68-9b939b40c1f8"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="6f0314d5-f4c4-44de-83a6-71b6eb892fca" x="333" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{OfficerID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="feb8bd6a-bd7b-4b4c-83d7-fee17de8ceb8"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="8faf4ba8-153c-46ee-bf50-a08dab8e8cff" x="444" y="0" width="111" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{InsurancePayment}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dba73982-9ac1-4134-af81-5548d1d74f13"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
