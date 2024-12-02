@@ -1,0 +1,136 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="AccidentReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a51824f1-2d2b-47b5-b363-c2be56a73c05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (10)"/>
+	<query language="SQL"><![CDATA[select * from Accident]]></query>
+	<field name="AccidentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AccidentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="AccidentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accident"/>
+	</field>
+	<field name="LaborID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accident"/>
+	</field>
+	<field name="LaborName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LaborName"/>
+		<property name="com.jaspersoft.studio.field.label" value="LaborName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accident"/>
+	</field>
+	<field name="OfficerID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OfficerID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accident"/>
+	</field>
+	<field name="Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accident"/>
+	</field>
+	<field name="Description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Description"/>
+		<property name="com.jaspersoft.studio.field.label" value="Description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="accident"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="9e68317c-8607-4079-b452-ee3bc08934c6" x="160" y="30" width="208" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Accident Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="30" splitType="Stretch">
+		<element kind="staticText" uuid="f7dec3f4-53ec-4200-a5f6-aff59f01254c" x="0" y="0" width="95" height="30" hTextAlign="Center">
+			<text><![CDATA[AccidentID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c2dfca6f-82bf-4f06-a8d7-45c1b08bd2dc"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="976a0ef3-952d-4b21-a403-100251fa3417" x="95" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[LaborID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="25920d06-5db9-41c5-a6e4-6f2342c91d77"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="8b17de41-cc4b-489f-b840-c9ba3768bd26" x="187" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[LaborName]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96c2d2e6-7763-4681-aa3c-50ce55d99db3"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="8e76cefa-adc3-4242-9302-3c8ecc77eaa7" x="279" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[OfficerID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2139a6cc-2aed-4c94-919e-6f981f3959ad"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="11bfc069-fe02-4b3e-9773-7005876a1ab3" x="371" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b98763ba-ccf8-4ec8-b72b-6ab9ed51aba2"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="4d66af79-f5d6-4183-9e45-e5d92c9c1ab3" x="463" y="0" width="92" height="30" hTextAlign="Center">
+			<text><![CDATA[Description]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45ff97dc-60e4-478f-9c98-0d86e09c0446"/>
+			<box>
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="3c42b142-c8ee-4abb-b815-8f7744f0f6e9" x="0" y="0" width="95" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{AccidentID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c2dfca6f-82bf-4f06-a8d7-45c1b08bd2dc"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="d379fc01-8c25-4ddd-a284-82f8e7af36d5" x="95" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="25920d06-5db9-41c5-a6e4-6f2342c91d77"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="915d07b4-8456-41ae-9d1d-af48c41f374b" x="187" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{LaborName}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96c2d2e6-7763-4681-aa3c-50ce55d99db3"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="f60f3334-1396-40b8-92d9-e6e15196ad73" x="279" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{OfficerID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2139a6cc-2aed-4c94-919e-6f981f3959ad"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="2da5b120-46dd-4c7e-86fe-d6c4b1c9e269" x="371" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b98763ba-ccf8-4ec8-b72b-6ab9ed51aba2"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="ad232aab-592e-4e3b-9eb6-18fe2a07c68f" x="463" y="0" width="92" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{Description}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45ff97dc-60e4-478f-9c98-0d86e09c0446"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
