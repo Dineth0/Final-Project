@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboard" prefHeight="649.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.finalproject.controller.MainLayoutController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="607.0" prefWidth="212.0" spacing="50.0" style="visibility: #7367F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="654.0" prefWidth="212.0" style="-fx-background-color: #282828;">
+               <children>
+                  <Button alignment="CENTER" layoutX="25.0" layoutY="230.0" mnemonicParsing="false" onAction="#LaborOnAction" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="Labors" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="21.0" layoutY="312.0" mnemonicParsing="false" onAction="#RetirementOnAction" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="Retirements">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="22.0" layoutY="355.0" mnemonicParsing="false" onAction="#PaymentOnAction" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="Payments">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="24.0" layoutY="399.0" mnemonicParsing="false" onAction="#AccidentOnAction" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="  Accident &amp; Insurance">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="23.0" layoutY="270.0" mnemonicParsing="false" onAction="#EquipmenOnAction" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="Euipments">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Group layoutX="31.0" layoutY="467.0">
+                     <children>
+                        <Button alignment="CENTER" layoutX="-7.0" layoutY="-23.0" mnemonicParsing="false" onAction="#FeedbackOnAction" prefHeight="33.0" prefWidth="158.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="Complaints">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Group>
+                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="36.0" layoutY="234.0">
+                     <image>
+                        <Image url="@images/labor.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="38.0" layoutY="274.0">
+                     <image>
+                        <Image url="@images/equ.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="33.0" layoutY="315.0">
+                     <image>
+                        <Image url="@images/ritire.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="31.0" layoutY="359.0">
+                     <image>
+                        <Image url="@images/payment.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="21.0" layoutY="402.0">
+                     <image>
+                        <Image url="@images/accident.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="38.0" layoutY="450.0">
+                     <image>
+                        <Image url="@images/feedback.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" layoutX="21.0" layoutY="189.0" mnemonicParsing="false" onAction="#DashboardOnAction" prefHeight="33.0" prefWidth="157.0" style="-fx-background-color: #8d99ae; -fx-background-radius: 15;" text="Dashboard" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="38.0" layoutY="194.0">
+                     <image>
+                        <Image url="@images/Dashboard.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="17.0" prefHeight="42.0" prefWidth="198.0" text="LABOR " textFill="#fffdfd">
+                     <font>
+                        <Font name="Bodoni MT" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="53.0" prefHeight="42.0" prefWidth="198.0" text="MANAGEMENT" textFill="#fffdfd">
+                     <font>
+                        <Font name="Bodoni MT" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="93.0" prefHeight="42.0" prefWidth="198.0" text="SYSYTEM" textFill="#fffdfd">
+                     <font>
+                        <Font name="Bodoni MT" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="6.0" />
+               </padding>
+            </Pane>
+         </children></VBox>
+      <AnchorPane fx:id="ancBody" layoutX="209.33333333333334" prefHeight="607.0" prefWidth="762.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></AnchorPane>
+   </children>
+</AnchorPane>
